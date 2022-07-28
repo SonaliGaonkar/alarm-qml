@@ -25,6 +25,12 @@ ItemDelegate {
                     font.pixelSize: Qt.application.font.pixelSize * 2
                     text: dateColumn.alarmDate.toLocaleTimeString(window.locale, Locale.ShortFormat)
                 }
+                RowLayout {
+                    Label {
+                        id: dateLabel
+                        text: dateColumn.alarmDate.toLocaleDateString(window.locale, Locale.ShortFormat)
+                    }
+                }
             }
         }
      }
