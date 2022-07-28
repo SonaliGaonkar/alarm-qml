@@ -9,4 +9,12 @@ ApplicationWindow {
     width: 400
     height: 600
     visible: true
+
+    ListView {
+        id: alarmListView
+        anchors.fill: parent
+        model: AlarmModel {}
+        delegate: AlarmDelegate {}
+   }
 }
+
