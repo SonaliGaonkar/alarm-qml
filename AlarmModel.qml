@@ -10,6 +10,7 @@ ListModel {
         month: 7
         year: 2022
         activated: true
+        label: "Wake up"
     }
     ListElement {
         hour: 6
@@ -18,22 +19,25 @@ ListModel {
         month: 7
         year: 2022
         activated: true
+        label:"Wake up"
     }
     ListElement {
-        hour: 6
-        minute: 30
+        hour: 7
+        minute: 00
         day: 29
         month: 7
         year: 2022
         activated: true
+        label:"Exercise"
     }
     ListElement {
         hour: 9
-        minute: 30
+        minute: 00
         day: 29
         month: 7
         year: 2022
         activated: true
+        label:"Office"
     }
 }
 
