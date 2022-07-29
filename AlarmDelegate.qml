@@ -38,6 +38,14 @@ ItemDelegate {
                     }
                 }
             }
+            Item {
+                Layout.fillWidth: true
+            }
+            Switch {
+                checked: model.activated
+                Layout.alignment: Qt.AlignTop
+                onClicked: model.activated = checked
+            }
         }
-     }
+    }
 }

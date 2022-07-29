@@ -11,6 +11,8 @@ ListModel {
         year: 2022
         activated: true
         label: "Wake up"
+        repeat: true
+
     }
     ListElement {
         hour: 6
