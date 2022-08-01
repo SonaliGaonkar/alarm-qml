@@ -21,19 +21,19 @@ ItemDelegate {
 
                 Label {
                     id: timeLabel
-                    font.pointSize: 16
+                    font.pointSize: 22
                     text: dateColumn.alarmDate.toLocaleTimeString(window.locale, Locale.ShortFormat)
                 }
                 RowLayout {
                     Label {
                         id: dateLabel
-                        font.pointSize : 11
+                        font.pointSize : 16
                         text: dateColumn.alarmDate.toLocaleDateString(window.locale, Locale.ShortFormat)
                     }
                     Label {
                         id: alarmAbout
-                        font.pointSize: 11
-                        text: "  ⸱    " + label
+                        font.pointSize: 14
+                        text: "   ⸱   " + label
                         visible: label.length > 0 && !root.checked
                     }
                 }
