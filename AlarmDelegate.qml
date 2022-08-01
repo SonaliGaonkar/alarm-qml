@@ -47,5 +47,25 @@ ItemDelegate {
                 onClicked: model.activated = checked
             }
         }
+        CheckBox {
+            id: alarmRepeat
+            text: qsTr("Repeat")
+            checked: model.repeat
+           // visible: root.checked
+           // onToggled: model.repeat = checked
+        }
+        Repeater {
+            id: dayRepeater
+            model: daysToRepeat
+            delegate: RoundButton {
+                text: Qt.locale().dayName(model.dayOfWeek, Locale.NarrowFormat)
+                flat: true
+                checked: model.repeat
+                checkable: true
+                Material.background: checked ? Material.accent : "transparent"
+                onToggled: model.repeat = checked
+            }
+        }
     }
+
 }
