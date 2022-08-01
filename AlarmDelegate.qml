@@ -21,18 +21,18 @@ ItemDelegate {
 
                 Label {
                     id: timeLabel
-                    font.pointSize: 22
+                    font.pointSize: 16
                     text: dateColumn.alarmDate.toLocaleTimeString(window.locale, Locale.ShortFormat)
                 }
                 RowLayout {
                     Label {
                         id: dateLabel
-                        font.pointSize : 16
+                        font.pointSize : 11
                         text: dateColumn.alarmDate.toLocaleDateString(window.locale, Locale.ShortFormat)
                     }
                     Label {
                         id: alarmAbout
-                        font.pointSize: 14
+                        font.pointSize: 11
                         text: "  ⸱    " + label
                         visible: label.length > 0 && !root.checked
                     }
@@ -41,6 +41,7 @@ ItemDelegate {
             Item {
                 Layout.fillWidth: true
             }
+
             Switch {
                 checked: model.activated
                 Layout.alignment: Qt.AlignTop
@@ -65,6 +66,8 @@ ItemDelegate {
             checked: model.repeat
             checkable: true
             Material.background: checked ? Material.accent : "transparent"
+            visible: root.checked
+            onToggled: model.repeat = checked
             }
         }
     }
