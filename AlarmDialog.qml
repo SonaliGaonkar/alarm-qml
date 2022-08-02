@@ -25,7 +25,13 @@ Dialog {
                     text: formatNumber(modelData)
                 }
             }
+           Tumbler {
+                id: minutesTumbler
+                model: 60
+                delegate: TumblerDelegate {
+                    text: formatNumber(modelData)
+                }
         }
     }
-
+}
 }

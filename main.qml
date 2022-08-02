@@ -29,7 +29,7 @@ ApplicationWindow {
         id: alarmDialog
         x: Math.round((parent.width - width) / 2)
         y: Math.round((parent.height - height) / 2)
-        alarmModel: alarmListView.model
+       // alarmModel: alarmListView.model
     }
 
 }
