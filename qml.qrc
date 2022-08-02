@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>AlarmModel.qml</file>
         <file>AlarmDelegate.qml</file>
+        <file>AlarmDialog.qml</file>
     </qresource>
 </RCC>
