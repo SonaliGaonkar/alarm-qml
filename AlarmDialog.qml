@@ -14,5 +14,18 @@ Dialog {
     function formatNumber(number) {
         return number < 10 && number >= 0 ? "0" + number : number.toString()
     }
+    contentItem: RowLayout {
+        RowLayout {
+            id: rowTumbler
+
+           Tumbler {
+                id: hoursTumbler
+                model: 24
+                delegate: TumblerDelegate {
+                    text: formatNumber(modelData)
+                }
+            }
+        }
+    }
 
 }
