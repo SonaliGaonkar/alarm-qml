@@ -16,5 +16,13 @@ ApplicationWindow {
         model: AlarmModel {}
         delegate: AlarmDelegate {}
    }
+    RoundButton {
+        id: addAlarmButton
+        text: "+"
+        anchors.bottom: alarmListView.bottom
+        anchors.bottomMargin: 8
+        anchors.horizontalCenter: parent.horizontalCenter
+        onClicked: alarmDialog.open()
+    }
 }
 
