@@ -8,7 +8,7 @@ Dialog {
     id: alarmDialog
     title: "Add new alarm"
     modal: true
-   // standardButtons: DialogButtonBox.Ok | DialogButtonBox.Cancel
+    standardButtons: DialogButtonBox.Ok | DialogButtonBox.Cancel
     property AlarmModel alarmModel
 
     function formatNumber(number) {
