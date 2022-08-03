@@ -15,29 +15,6 @@ Dialog {
         return number < 10 && number >= 0 ? "0" + number : number.toString()
     }
 
-    /*onAccepted: {
-        alarmModel.append({
-            "hour": hoursTumbler.currentIndex,
-            "minute": minutesTumbler.currentIndex,
-            "day": dayTumbler.currentIndex + 1,
-            "month": monthTumbler.currentIndex + 1,
-            "year": yearTumbler.years[yearTumbler.currentIndex],
-            "activated": true,
-            "label": "",
-            "repeat": false,
-            "daysToRepeat": [
-                { "dayOfWeek": 0, "repeat": false },
-                { "dayOfWeek": 1, "repeat": false },
-                { "dayOfWeek": 2, "repeat": false },
-                { "dayOfWeek": 3, "repeat": false },
-                { "dayOfWeek": 4, "repeat": false },
-                { "dayOfWeek": 5, "repeat": false },
-                { "dayOfWeek": 6, "repeat": false }
-            ],
-        })
-    }
-    onRejected: alarmDialog.close()*/
-
     contentItem: RowLayout {
         RowLayout {
             id: rowTumbler
@@ -64,6 +41,7 @@ Dialog {
             Layout.leftMargin: 20
 
             property alias dayTumbler: dayTumbler
+             property alias monthTumbler: monthTumbler
 
             readonly property var days: [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
@@ -85,6 +63,16 @@ Dialog {
 
                 delegate: TumblerDelegate {
                     text: formatNumber(modelData)
+                }
+            }
+            Tumbler {
+                id: monthTumbler
+
+                onCurrentIndexChanged: dayTumbler.updateModel()
+
+                model: 12
+                delegate: TumblerDelegate {
+                    text: window.locale.standaloneMonthName(modelData, Locale.ShortFormat)
                 }
             }
 
