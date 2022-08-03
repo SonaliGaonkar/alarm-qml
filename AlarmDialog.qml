@@ -42,6 +42,7 @@ Dialog {
 
             property alias dayTumbler: dayTumbler
              property alias monthTumbler: monthTumbler
+             property alias yearTumbler: yearTumbler
 
             readonly property var days: [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
@@ -73,6 +74,19 @@ Dialog {
                 model: 12
                 delegate: TumblerDelegate {
                     text: window.locale.standaloneMonthName(modelData, Locale.ShortFormat)
+                }
+            }
+            Tumbler {
+                id: yearTumbler
+
+                readonly property var years: (function() {
+                    var currentYear = new Date().getFullYear()
+                    return [0, 1, 2, 3, 4].map(function(value) { return value + currentYear; })
+                })()
+
+                model: years
+                delegate: TumblerDelegate {
+                    text: formatNumber(modelData)
                 }
             }
 
