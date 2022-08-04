@@ -71,6 +71,14 @@ ItemDelegate {
             }
         }
     }
+        TextField {
+            id: alarmDescriptionTextField
+            placeholderText: qsTr("Enter description here")
+            cursorVisible: true
+            visible: root.checked
+            text: model.label
+            onTextEdited: model.label = text
+        }
 
 }
 }
