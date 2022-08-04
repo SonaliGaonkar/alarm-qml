@@ -79,6 +79,14 @@ ItemDelegate {
             text: model.label
             onTextEdited: model.label = text
         }
+        Button {
+            id: deleteAlarmButton
+            text: qsTr("Delete")
+            width: 40
+            height: 40
+            visible: root.checked
+            onClicked: root.ListView.view.model.remove(root.ListView.view.currentIndex, 1)
+        }
 
 }
 }
